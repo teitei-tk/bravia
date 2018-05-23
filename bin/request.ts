@@ -5,6 +5,4 @@ const key = process.env.PSK_KEY;
 
 const bravia = new Bravia(ipAddr, key);
 
-bravia.client.getCommandCode("Netflix").then((code: any) => {
-  console.log(code);
-});
+bravia.client.request("Netflix");

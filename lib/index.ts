@@ -1,9 +1,3 @@
-import { Client } from "./client";
+import { Bravia } from "./bravia";
 
-export class Bravia {
-  client: Client;
-
-  constructor(ipAddr: string, key: string) {
-    this.client = new Client(ipAddr, key);
-  }
-}
+export { Bravia };
