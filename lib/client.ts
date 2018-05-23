@@ -45,7 +45,7 @@ export class Client {
     const code = await this.getCommandCode(command);
     const payload = PayloadTemplate(code);
 
-    const result = await this.client
+    await this.client
       .post(RequestPaths.IRCC, payload, {
         headers: {
           "Content-Type": "text/xml; charset=UTF-8",
@@ -56,8 +56,6 @@ export class Client {
       .catch((err: any) => {
         console.log(err);
       });
-
-    console.log(result);
   }
 
   async hasCommand(command: string): Promise<boolean> {
@@ -84,7 +82,7 @@ export class Client {
     return code;
   }
 
-  async fetchCommands(): Promise<Commands> {
+  async fetchCommands(lower = true): Promise<Commands> {
     const result = this.client.post(RequestPaths.System, {
       id: 20,
       method: "getRemoteControllerInfo",
@@ -98,7 +96,12 @@ export class Client {
         if (item === undefined) {
           return false;
         }
-        commandList[item.name] = item.value;
+
+        let name = item.name;
+        if (lower) {
+          name = item.name.toLowerCase();
+        }
+        commandList[name] = item.value;
       });
 
       return commandList;

@@ -5,4 +5,4 @@ const key = process.env.PSK_KEY;
 
 const bravia = new Bravia(ipAddr, key);
 
-bravia.client.request("Netflix");
+bravia.client.request("hdmi1");
