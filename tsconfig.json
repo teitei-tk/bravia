@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "build",
+    "lib": [ "es2017" ],
+    "rootDir": ".",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "pretty": true
+  },
+  "include": [
+    "./lib/**/*",
+    "./bin/**/*"
+  ],
+  "exclude": [
+    "**node_modules**",
+    "**/*.spec.ts"
+  ]
+}
