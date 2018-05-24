@@ -1,8 +1,7 @@
 {
-  "name": "bravia",
+  "name": "@teitei-tk/bravia",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "remote controll Bravia AndroidTV",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +11,11 @@
   "bugs": {
     "url": "https://github.com/teitei-tk/bravia/issues"
   },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": ["AndroidTV", "bravia"],
+  "files": ["build", "bin"],
   "homepage": "https://github.com/teitei-tk/bravia#readme",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.47",
