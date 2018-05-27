@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const Bravia = require("./../build/lib").Bravia;
+
+const ipAddr = process.env.IP_ADDR;
+const key = process.env.PSK_KEY;
+
+const client = new Bravia(ipAddr, key);
+
+client.fetchCommands();
