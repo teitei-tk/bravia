@@ -12,7 +12,7 @@ function main(command) {
 const program = require('commander');
 
 program.description('request available command. use bin/command').arguments('<cmd>').action((cmd, env) => {
-  main(c).then(() => { process.exit(0); }).catch((err) => {
+  main(cmd).then(() => { process.exit(0); }).catch((err) => {
     console.error(err);
     process.exit(1);
   });

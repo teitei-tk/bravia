@@ -42,7 +42,7 @@ export class Client {
   }
 
   async request(command: string) {
-    const code = await this.getCommandCode(command);
+    const code = await this.getCommandCode(command.toLowerCase());
     const payload = PayloadTemplate(code);
 
     const r = await this.client
