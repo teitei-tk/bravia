@@ -1,4 +1,4 @@
-import { Client } from "./client";
+import { Client, Commands } from "./client";
 
 export class Bravia {
   client: Client;
@@ -7,13 +7,11 @@ export class Bravia {
     this.client = new Client(ipAddr, key);
   }
 
-  request(command: string) {
-    this.client.request(command);
+  async request(command: string) {
+    return this.client.request(command);
   }
 
-  fetchCommands() {
-    this.client.fetchCommands().then(r => {
-      console.log(r);
-    });
+  async fetchCommands(): Promise<Commands> {
+    return this.client.fetchCommands(false);
   }
 }

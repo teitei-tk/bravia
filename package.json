@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "remote controll Bravia AndroidTV",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": "git+ssh://git@github.com/teitei-tk/bravia.git",
   "author": "teitei-tk <teitei.tk@gmail.com>",
@@ -15,8 +15,8 @@
     "node": ">=8"
   },
   "bin": {
-    "request": "./bin/request.ts",
-    "commands": "./bin/commands.ts"
+    "request": "./bin/request.js",
+    "commands": "./bin/commands.js"
   },
   "keywords": [
     "AndroidTV",

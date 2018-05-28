@@ -5,7 +5,7 @@ enum RequestPaths {
   IRCC = "/IRCC"
 }
 
-interface Commands {
+export interface Commands {
   [index: string]: string;
 }
 
@@ -45,7 +45,7 @@ export class Client {
     const code = await this.getCommandCode(command);
     const payload = PayloadTemplate(code);
 
-    await this.client
+    const r = await this.client
       .post(RequestPaths.IRCC, payload, {
         headers: {
           "Content-Type": "text/xml; charset=UTF-8",
@@ -56,6 +56,8 @@ export class Client {
       .catch((err: any) => {
         console.log(err);
       });
+
+    return r;
   }
 
   async hasCommand(command: string): Promise<boolean> {
