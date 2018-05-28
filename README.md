@@ -1,4 +1,6 @@
 # bravia
+[![npm version](https://badge.fury.io/js/%40teitei-tk%2Fbravia.svg)](https://badge.fury.io/js/%40teitei-tk%2Fbravia)
+
 Remote Control your Sony Bravia
 
 ## Install
