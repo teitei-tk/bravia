@@ -1,6 +1,6 @@
 {
   "name": "@teitei-tk/bravia",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "remote controll Bravia AndroidTV",
   "scripts": {
     "build": "tsc"
