@@ -26,9 +26,8 @@ export PSK_KEY="0000"
 ```
 
 ## Usage
-
+#### fetch available commands
 ```bash
-# fetch available commands
 $ ./node_modules/.bin/commands
 Num1
 Num2
@@ -52,3 +51,15 @@ VolumeDown
 ....
 ....
 ```
+
+#### exec command
+```bash
+# volume up
+$ ./node_modules/.bin/request VolumeUp
+
+# change netflix
+$ ./node_modules/.bin/request Netflix
+```
+
+## LICENSE
+Apache License 2.0
