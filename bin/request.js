@@ -11,9 +11,7 @@ function main(command) {
 
 const program = require('commander');
 
-let c = undefined;
-program.arguments('<cmd>').action((cmd, env) => {
-  c = cmd;
+program.description('request available command. use bin/command').arguments('<cmd>').action((cmd, env) => {
   main(c).then(() => { process.exit(0); }).catch((err) => {
     console.error(err);
     process.exit(1);

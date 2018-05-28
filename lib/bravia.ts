@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { Client, Commands } from "./client";
 
 export class Bravia {
