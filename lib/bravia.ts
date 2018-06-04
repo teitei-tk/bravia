@@ -1,6 +1,7 @@
 import "dotenv/config";
 
 import { Client, Commands } from "./client";
+import { AxiosResponse } from "axios";
 
 export class Bravia {
   client: Client;
@@ -9,7 +10,7 @@ export class Bravia {
     this.client = new Client(ipAddr, key);
   }
 
-  async request(command: string) {
+  async request(command: string): Promise<boolean> {
     return this.client.request(command);
   }
 

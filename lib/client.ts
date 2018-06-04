@@ -41,11 +41,11 @@ export class Client {
     });
   }
 
-  async request(command: string) {
+  async request(command: string): Promise<boolean> {
     const code = await this.getCommandCode(command.toLowerCase());
     const payload = PayloadTemplate(code);
 
-    const r = await this.client
+    const result = await this.client
       .post(RequestPaths.IRCC, payload, {
         headers: {
           "Content-Type": "text/xml; charset=UTF-8",
@@ -53,11 +53,15 @@ export class Client {
           SOAPACTION: '"urn:schemas-sony-com:service:IRCC:1#X_SendIRCC"'
         }
       })
+      .then(() => {
+        return true;
+      })
       .catch((err: any) => {
-        console.log(err);
+        console.error(`request failed: ${err}`);
+        return false;
       });
 
-    return r;
+    return result;
   }
 
   async hasCommand(command: string): Promise<boolean> {

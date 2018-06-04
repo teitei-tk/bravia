@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 function main() {
-  const Bravia = require("./../build/lib").Bravia;
+  const Bravia = require("./../build").Bravia;
   const ipAddr = process.env.IP_ADDR;
   const key = process.env.PSK_KEY;
 

@@ -2,8 +2,10 @@
   "name": "@teitei-tk/bravia",
   "version": "0.1.1",
   "description": "remote controll Bravia AndroidTV",
+  "main": "./build/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
   },
   "repository": "git+ssh://git@github.com/teitei-tk/bravia.git",
   "author": "teitei-tk <teitei.tk@gmail.com>",
@@ -23,16 +25,11 @@
     "bravia"
   ],
   "files": [
-    "build",
-    "bin"
+    "build/",
+    "bin/"
   ],
   "homepage": "https://github.com/teitei-tk/bravia#readme",
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.47",
-    "@babel/core": "^7.0.0-beta.47",
-    "@babel/plugin-syntax-typescript": "^7.0.0-beta.47",
-    "@babel/preset-env": "^7.0.0-beta.47",
-    "@babel/preset-typescript": "^7.0.0-beta.47",
     "@types/dotenv": "^4.0.3",
     "@types/node": "^10.1.2",
     "awesome-typescript-loader": "^5.0.0",
